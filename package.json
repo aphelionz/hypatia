@@ -1,0 +1,34 @@
+{
+  "name": "pesy-doctransfer",
+  "version": "0.0.0",
+  "description":
+    "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
+  "esy": {
+    "build": "pesy",
+    "release": { "releasedBinaries": [ "PesyDoctransferApp.exe" ] }
+  },
+  "buildDirs": {
+    "src": {
+      "require": [ "yojson", "core", "ppx_deriving_yojson" ],
+      "main": "Main",
+      "name": "Doctransfer.exe"
+    }
+  },
+  "scripts": {
+    "lint": "bash -c 'refmt --in-place src/*.re'",
+    "example":
+      "esy x Doctransfer.exe ./examples/jsondoc-ast.json ./examples/output.json"
+  },
+  "dependencies": {
+    "@esy-ocaml/reason": "*",
+    "@opam/core": "v0.11.3",
+    "@opam/dune": "*",
+    "@opam/jsonm": "1.0.1",
+    "@opam/ppx_deriving_yojson": "3.1",
+    "@opam/yojson": "1.4.1",
+    "ocaml": "^4.4.0",
+    "pesy": "*",
+    "refmterr": "*"
+  },
+  "devDependencies": { "@opam/merlin": "*" }
+}

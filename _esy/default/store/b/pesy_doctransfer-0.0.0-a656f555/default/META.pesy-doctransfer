@@ -1,0 +1,9 @@
+package "lib" (
+  directory = "lib"
+  description = ""
+  requires = ""
+  archive(byte) = "PesyDoctransfer.cma"
+  archive(native) = "PesyDoctransfer.cmxa"
+  plugin(byte) = "PesyDoctransfer.cma"
+  plugin(native) = "PesyDoctransfer.cmxs"
+)

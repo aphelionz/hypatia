@@ -1,0 +1,9 @@
+# dune build -p pesy-doctransfer
+# OCAMLPARAM: unset
+$ /usr/bin/nproc > /tmp/dunebfcbd5.output 2> /dev/null
+$ /home/mark/.esy/3_____________________________________________________________________/i/opam__s__ocamlfind-1.8.0-706cbcbe/bin/ocamlfind printconf path > /tmp/dunec49f2b.output
+$ /home/mark/.esy/3_____________________________________________________________________/i/ocaml-4.7.1003-d0406ae7/bin/ocamlc.opt -config > /tmp/dunecf7d2d.output
+$ (cd /home/mark/Projects/aphelionz/pesy-doctransfer/_esy/default/store/b/pesy_doctransfer-0.0.0-a656f555/default && /home/mark/.esy/3_____________________________________________________________________/i/ocaml-4.7.1003-d0406ae7/bin/ocamlc.opt -w -40 -g -bin-annot -I executable/.Doctransfer.eobjs -I library/.PesyDoctransfer.objs -no-alias-deps -o executable/.Doctransfer.eobjs/Doctransfer.cmo -c -impl executable/Doctransfer.re.ml)
+> File "executable/Doctransfer.re", line 1, characters 5-11:
+> Error: Unbound module Yojson
+[2]
