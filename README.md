@@ -66,7 +66,7 @@ Hypatia is built with native ReasonML and was created to manage the documentatio
 
 ## Installation
 
-### Prerequisites: `[esy](https://github.com/esy/esy)` and `[pesy](https://github.com/jordwalke/pesy)`
+### Prerequisites: [`esy`](https://github.com/esy/esy) and [`pesy`](https://github.com/jordwalke/pesy)
 
 Hypatia currently requires the `esy` and `pest` tools to build and run.
 
@@ -76,16 +76,11 @@ npm install -g esy pesy
 
 ### Installation Steps
 
-To build the executable locally, follow these steps:
-
 ```
-git clone https://github.com/aphelionz/hypatia.git
-esy install
-esy pesy
-esy build
+npm install -g hypatia
 ```
 
-Then, the binary will be available at `xxx`. Move it where you want!
+Then, the binary will be available at `hypatia.exe`. Move it where you want!
 
 ## Usage
 
@@ -100,7 +95,18 @@ Usage: hypatia.exe [input_file] [output_file]
 
 Feel free to ask questions via GitHub issues. PRs are welcome.
 
-Use `esy release` to build the npm package.
+To build the executable locally, follow these steps:
+
+```
+git clone https://github.com/aphelionz/hypatia.git
+esy install
+esy pesy
+esy build
+```
+
+You can then run the example via `npm run example` or the executable via `esy x hypatia.exe`.
+
+Then, if you would like, use `esy release` to build the npm package.
 
 ## License
 
