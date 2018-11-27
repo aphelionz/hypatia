@@ -66,11 +66,18 @@ Hypatia is built with native ReasonML and was created to manage the documentatio
 
 ## Installation
 
-### Prerequisites: `esy` and `pesy`
+### Prerequisites: `[esy](https://github.com/esy/esy)` and `[pesy](https://github.com/jordwalke/pesy)`
 
 Hypatia currently requires the `esy` and `pest` tools to build and run.
 
+```
+npm install -g esy pesy
+```
+
 ### Installation Steps
+
+To build the executable locally, follow these steps:
+
 ```
 git clone https://github.com/aphelionz/hypatia.git
 esy install
@@ -78,21 +85,22 @@ esy pesy
 esy build
 ```
 
+Then, the binary will be available at `xxx`. Move it where you want!
+
 ## Usage
 
-The binary is available 
-
-After building the project, you can run the main binary that is produced.
-
-The current recommendation is to create two jupyter notebooks in your projects
-
 ```
-esy x hypatia
+Hypatia - jsdoc to ijavascript
+Usage: hypatia.exe [input_file] [output_file]
+ - input_file: jsondoc output .json file
+ - output_file: jupyter notebook .ipynb file
 ```
 
 ## Contributing
 
-Feel free to ask questions via issues. PRs are accepted.
+Feel free to ask questions via GitHub issues. PRs are welcome.
+
+Use `esy release` to build the npm package.
 
 ## License
 
