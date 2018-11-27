@@ -1,5 +1,5 @@
 {
-  "hash": "88a97ab1e05c27c2d945059af8e22168",
+  "hash": "c4c594532aa3a4ac4ce08778fcd02b8e",
   "root": "root@path:./package.json",
   "node": {
     "root@path:./package.json": {
@@ -12,9 +12,10 @@
       },
       "dependencies": [
         "@esy-ocaml/reason@3.3.7", "@opam/core@opam:v0.11.3",
-        "@opam/dune@opam:1.5.1", "@opam/jsonm@opam:1.0.1",
-        "@opam/merlin@opam:3.2.2", "@opam/ppx_deriving_yojson@opam:3.1",
-        "@opam/yojson@opam:1.4.1", "ocaml@4.7.1003", "pesy@0.3.15",
+        "@opam/dune@opam:1.5.1", "@opam/merlin@opam:3.2.2",
+        "@opam/ppx_deriving_yojson@opam:3.1", "@opam/yojson@opam:1.4.1",
+        "ocaml@4.7.1003",
+        "pesy@github:jordwalke/pesy#b29b812f186f53483e734e290b14d26714aa2f86",
         "refmterr@3.1.10"
       ]
     },
@@ -32,12 +33,13 @@
         "@opam/re@opam:1.8.0", "ocaml@4.7.1003"
       ]
     },
-    "pesy@0.3.15": {
+    "pesy@github:jordwalke/pesy#b29b812f186f53483e734e290b14d26714aa2f86": {
       "record": {
         "name": "pesy",
-        "version": "0.3.15",
+        "version":
+          "github:jordwalke/pesy#b29b812f186f53483e734e290b14d26714aa2f86",
         "source":
-          "archive:https://registry.npmjs.org/pesy/-/pesy-0.3.15.tgz#sha1:61839c246c2862db37ecb9b8bad486458c73260a",
+          "github:jordwalke/pesy#b29b812f186f53483e734e290b14d26714aa2f86",
         "files": [],
         "opam": null
       },
@@ -97,47 +99,6 @@
         "@opam/ppxlib@opam:0.3.1", "ocaml@4.7.1003"
       ]
     },
-    "@opam/uutf@opam:1.0.1": {
-      "record": {
-        "name": "@opam/uutf",
-        "version": "opam:1.0.1",
-        "source":
-          "archive:http://erratique.ch/software/uutf/releases/uutf-1.0.1.tbz#md5:b8535f974027357094c5cdb4bf03a21b",
-        "files": [],
-        "opam": {
-          "name": "uutf",
-          "version": "1.0.1",
-          "opam":
-            "opam-version: \"2.0\"\nname: \"uutf\"\nversion: \"1.0.1\"\nsynopsis: \"Non-blocking streaming Unicode codec for OCaml\"\ndescription: \"\"\"\nUutf is a non-blocking streaming codec to decode and encode the UTF-8,\nUTF-16, UTF-16LE and UTF-16BE encoding schemes. It can efficiently\nwork character by character without blocking on IO. Decoders perform\ncharacter position tracking and support newline normalization.\n\nFunctions are also provided to fold over the characters of UTF encoded\nOCaml string values and to directly encode characters in OCaml\nBuffer.t values.\n\nUutf has no dependency and is distributed under the ISC license.\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"unicode\" \"text\" \"utf-8\" \"utf-16\" \"codec\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/uutf\"\ndoc: \"http://erratique.ch/software/uutf/doc/Uutf\"\nbug-reports: \"https://github.com/dbuenzli/uutf/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build}\n  \"ocamlbuild\" {build}\n  \"topkg\" {build}\n  \"uchar\"\n]\ndepopts: [\"cmdliner\"]\nconflicts: [\n  \"cmdliner\" {< \"0.9.6\"}\n]\nbuild: [\n  \"ocaml\"\n  \"pkg/pkg.ml\"\n  \"build\"\n  \"--pinned\"\n  \"%{pinned}%\"\n  \"--with-cmdliner\"\n  \"%{cmdliner:installed}%\"\n]\ndev-repo: \"git+http://erratique.ch/repos/uutf.git\"\nurl {\n  src: \"http://erratique.ch/software/uutf/releases/uutf-1.0.1.tbz\"\n  checksum: \"md5=b8535f974027357094c5cdb4bf03a21b\"\n}",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:1.0.0",
-        "@opam/uchar@opam:0.0.2", "ocaml@4.7.1003"
-      ]
-    },
-    "@opam/uchar@opam:0.0.2": {
-      "record": {
-        "name": "@opam/uchar",
-        "version": "opam:0.0.2",
-        "source":
-          "archive:https://github.com/ocaml/uchar/releases/download/v0.0.2/uchar-0.0.2.tbz#md5:c9ba2c738d264c420c642f7bb1cf4a36",
-        "files": [],
-        "opam": {
-          "name": "uchar",
-          "version": "0.0.2",
-          "opam":
-            "opam-version: \"2.0\"\nname: \"uchar\"\nversion: \"0.0.2\"\nsynopsis: \"Compatibility library for OCaml's Uchar module\"\ndescription: \"\"\"\nThe `uchar` package provides a compatibility library for the\n[`Uchar`][1] module introduced in OCaml 4.03.\n\nThe `uchar` package is distributed under the license of the OCaml\ncompiler. See [LICENSE](LICENSE) for details.\n\n[1]: http://caml.inria.fr/pub/docs/manual-ocaml/libref/Uchar.html\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"typeof OCaml system\"\ntags: [\"text\" \"character\" \"unicode\" \"compatibility\" \"org:ocaml.org\"]\nhomepage: \"http://ocaml.org\"\ndoc: \"https://ocaml.github.io/uchar/\"\nbug-reports: \"https://github.com/ocaml/uchar/issues\"\ndepends: [\n  \"ocaml\" {>= \"3.12.0\"}\n  \"ocamlbuild\" {build}\n]\nbuild: [\n  [\"ocaml\" \"pkg/git.ml\"]\n  [\n    \"ocaml\"\n    \"pkg/build.ml\"\n    \"native=%{ocaml:native}%\"\n    \"native-dynlink=%{ocaml:native-dynlink}%\"\n  ]\n]\ndev-repo: \"git+https://github.com/ocaml/uchar.git\"\nurl {\n  src:\n    \"https://github.com/ocaml/uchar/releases/download/v0.0.2/uchar-0.0.2.tbz\"\n  checksum: \"md5=c9ba2c738d264c420c642f7bb1cf4a36\"\n}",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "ocaml@4.7.1003"
-      ]
-    },
     "@opam/typerep@opam:v0.11.0": {
       "record": {
         "name": "@opam/typerep",
@@ -156,27 +117,6 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/base@opam:v0.11.1",
         "@opam/jbuilder@opam:transition", "ocaml@4.7.1003"
-      ]
-    },
-    "@opam/topkg@opam:1.0.0": {
-      "record": {
-        "name": "@opam/topkg",
-        "version": "opam:1.0.0",
-        "source":
-          "archive:http://erratique.ch/software/topkg/releases/topkg-1.0.0.tbz#md5:e3d76bda06bf68cb5853caf6627da603",
-        "files": [],
-        "opam": {
-          "name": "topkg",
-          "version": "1.0.0",
-          "opam":
-            "opam-version: \"2.0\"\nname: \"topkg\"\nversion: \"1.0.0\"\nsynopsis: \"The transitory OCaml software packager\"\ndescription: \"\"\"\nTopkg is a packager for distributing OCaml software. It provides an\nAPI to describe the files a package installs in a given build\nconfiguration and to specify information about the package's\ndistribution, creation and publication procedures.\n\nThe optional topkg-care package provides the `topkg` command line tool\nwhich helps with various aspects of a package's life cycle: creating\nand linting a distribution, releasing it on the WWW, publish its\ndocumentation, add it to the OCaml opam repository, etc.\n\nTopkg is distributed under the ISC license and has **no**\ndependencies. This is what your packages will need as a *build*\ndependency.\n\nTopkg-care is distributed under the ISC license it depends on\n[fmt][fmt], [logs][logs], [bos][bos], [cmdliner][cmdliner],\n[webbrowser][webbrowser] and `opam-format`.\n\n[fmt]: http://erratique.ch/software/fmt\n[logs]: http://erratique.ch/software/logs\n[bos]: http://erratique.ch/software/bos\n[cmdliner]: http://erratique.ch/software/cmdliner\n[webbrowser]: http://erratique.ch/software/webbrowser\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"packaging\" \"ocamlbuild\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/topkg\"\ndoc: \"http://erratique.ch/software/topkg/doc\"\nbug-reports: \"https://github.com/dbuenzli/topkg/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build & >= \"1.6.1\"}\n  \"ocamlbuild\"\n  \"result\"\n]\nbuild: [\n  \"ocaml\" \"pkg/pkg.ml\" \"build\" \"--pkg-name\" name \"--dev-pkg\" \"%{pinned}%\"\n]\ndev-repo: \"git+http://erratique.ch/repos/topkg.git\"\nurl {\n  src: \"http://erratique.ch/software/topkg/releases/topkg-1.0.0.tbz\"\n  checksum: \"md5=e3d76bda06bf68cb5853caf6627da603\"\n}",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/result@opam:1.3",
-        "ocaml@4.7.1003"
       ]
     },
     "@opam/stdio@opam:v0.11.0": {
@@ -1383,27 +1323,6 @@
       "dependencies": [
         "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
         "@opam/ocamlfind@opam:1.8.0", "ocaml@4.7.1003"
-      ]
-    },
-    "@opam/jsonm@opam:1.0.1": {
-      "record": {
-        "name": "@opam/jsonm",
-        "version": "opam:1.0.1",
-        "source":
-          "archive:http://erratique.ch/software/jsonm/releases/jsonm-1.0.1.tbz#md5:e2ca39eaefd55b8d155c4f1ec5885311",
-        "files": [],
-        "opam": {
-          "name": "jsonm",
-          "version": "1.0.1",
-          "opam":
-            "opam-version: \"2.0\"\nname: \"jsonm\"\nversion: \"1.0.1\"\nsynopsis: \"Non-blocking streaming JSON codec for OCaml\"\ndescription: \"\"\"\nJsonm is a non-blocking streaming codec to decode and encode the JSON\ndata format. It can process JSON text without blocking on IO and\nwithout a complete in-memory representation of the data.\n\nThe alternative \"uncut\" codec also processes whitespace and\n(non-standard) JSON with JavaScript comments.\n\nJsonm is made of a single module and depends on [Uutf][uutf]. It is distributed\nunder the ISC license.\n\n[uutf]: http://erratique.ch/software/uutf\"\"\"\nmaintainer: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nauthors: \"Daniel Bünzli <daniel.buenzl i@erratique.ch>\"\nlicense: \"ISC\"\ntags: [\"json\" \"codec\" \"org:erratique\"]\nhomepage: \"http://erratique.ch/software/jsonm\"\ndoc: \"http://erratique.ch/software/jsonm/doc/Jsonm\"\nbug-reports: \"https://github.com/dbuenzli/jsonm/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.01.0\"}\n  \"ocamlfind\" {build}\n  \"ocamlbuild\" {build}\n  \"topkg\" {build}\n  \"uchar\"\n  \"uutf\" {>= \"1.0.0\"}\n]\nbuild: [\"ocaml\" \"pkg/pkg.ml\" \"build\" \"--pinned\" \"%{pinned}%\"]\ndev-repo: \"git+http://erratique.ch/repos/jsonm.git\"\nurl {\n  src: \"http://erratique.ch/software/jsonm/releases/jsonm-1.0.1.tbz\"\n  checksum: \"md5=e2ca39eaefd55b8d155c4f1ec5885311\"\n}",
-          "override": null
-        }
-      },
-      "dependencies": [
-        "@esy-ocaml/substs@0.0.1", "@opam/ocamlbuild@opam:0.12.0",
-        "@opam/ocamlfind@opam:1.8.0", "@opam/topkg@opam:1.0.0",
-        "@opam/uchar@opam:0.0.2", "@opam/uutf@opam:1.0.1", "ocaml@4.7.1003"
       ]
     },
     "@opam/jbuilder@opam:transition": {
