@@ -24,7 +24,8 @@ let title = d => {
   "# " ++ longname ++ " <small>" ++ scope ++ " " ++ kind ++ "</small>";
 };
 
-let desc = d => d |> snag("description", to_string, "");
+let desc = d => "\n" ++ snag("description", to_string, "", d);
+
 let params = d => {
   let paramsList = snag("params", to_list, [], d);
 
@@ -67,15 +68,25 @@ let returns = d => {
 
 let createCells = d => [
   MarkdownCell([title(d), desc(d)] @ params(d) @ returns(d)),
-  /* CodeCell(examples(d), [], 0), */
+  CodeCell(examples(d), [], 0),
 ];
 
 let expandCells = cell =>
   switch (cell) {
   | MarkdownCell(source) =>
-    markdownCell_to_yojson({cell_type: "markdown", source})
+    markdownCell_to_yojson({
+      cell_type: "markdown",
+      metadata: from_string("{}"),
+      source,
+    })
   | CodeCell(source, outputs, execution_count) =>
-    codeCell_to_yojson({cell_type: "code", source, outputs, execution_count})
+    codeCell_to_yojson({
+      cell_type: "code",
+      source,
+      metadata: from_string("{}"),
+      outputs,
+      execution_count,
+    })
   };
 
 let process = (input_file, output_file) => {

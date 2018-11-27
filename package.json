@@ -1,6 +1,6 @@
 {
   "name": "pesy-doctransfer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description":
     "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
   "esy": {

@@ -27,12 +27,14 @@ type source = list(string);
 [@deriving yojson]
 type markdownCell = {
   cell_type: string,
+  metadata: Yojson.Safe.json,
   source: list(string),
 };
 
 [@deriving yojson]
 type codeCell = {
   cell_type: string,
+  metadata: Yojson.Safe.json,
   source: list(string),
   outputs: list(string),
   execution_count: int,
