@@ -59,7 +59,7 @@ Hypatia turns this:
 
 into this:
 
-[Img]
+![Jupyter Notebook version of the above code](./doc/jupyter-screenshot.png)
 
 Hypatia is built with native ReasonML and was created to manage the documentation in the `orbitdb` repositories.
 
