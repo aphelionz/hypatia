@@ -5,7 +5,7 @@
     "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
   "esy": {
     "build": "pesy",
-    "release": { "releasedBinaries": [ "hypatia" ] }
+    "release": { "releasedBinaries": [ "hypatia.exe"] }
   },
   "buildDirs": {
     "src": {
