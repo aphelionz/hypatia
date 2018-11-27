@@ -61,14 +61,14 @@ into this:
 
 ![Jupyter Notebook version of the above code](./doc/jupyter-screenshot.png)
 
-Hypatia is built with native ReasonML and was created to manage the documentation in the `orbitdb` repositories.
+Hypatia is built with native ReasonML and was created to manage the documentation in the [`orbitdb`](https://github.com/orbitdb) repositories.
 
 
 ## Installation
 
 ### Prerequisites: [`esy`](https://github.com/esy/esy) and [`pesy`](https://github.com/jordwalke/pesy)
 
-Hypatia currently requires the `esy` and `pest` tools to build and run.
+Hypatia currently requires the `esy` and `pesy` tools to build and run.
 
 ```
 npm install -g esy pesy
