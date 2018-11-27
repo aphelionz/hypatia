@@ -66,7 +66,7 @@ Hypatia is built with native ReasonML and was created to manage the documentatio
 
 ## Installation
 
-### Prerequisites: `[esy](https://github.com/esy/esy)` and `[pesy](https://github.com/jordwalke/pesy)`
+### Prerequisites: [`esy`](https://github.com/esy/esy) and [`pesy`](https://github.com/jordwalke/pesy)
 
 Hypatia currently requires the `esy` and `pest` tools to build and run.
 
