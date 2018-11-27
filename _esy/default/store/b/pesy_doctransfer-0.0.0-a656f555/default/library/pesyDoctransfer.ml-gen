@@ -1,2 +1,0 @@
-(** @canonical PesyDoctransfer.Util *)
-module Util = PesyDoctransfer__Util
