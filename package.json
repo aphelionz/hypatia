@@ -18,7 +18,7 @@
   "scripts": {
     "lint": "bash -c 'refmt --in-place src/*.re'",
     "example":
-      "esy x hypatia ./examples/jsondoc-ast.json ./examples/output.ipynb"
+      "esy x hypatia.exe examples/jsondoc-ast.json ./examples/output.ipynb"
   },
   "dependencies": {
     "@esy-ocaml/reason": "*",
