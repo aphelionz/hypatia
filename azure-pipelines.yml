@@ -17,18 +17,11 @@ jobs:
   steps:
   - template: esy-build-steps.yml
 
-- job: Windows
-  pool:
-    vmImage: 'vs2017-win2016'
-  steps:
-  - template: esy-build-steps.yml
-
 - job: Release
   displayName: Release
   dependsOn:
       - Linux
       - MacOS
-      - Windows
   condition: succeeded()
   pool:
      vmImage: ubuntu-16.04
