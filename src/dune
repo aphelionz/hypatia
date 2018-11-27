@@ -1,12 +1,12 @@
 
 ; !!!! This dune file is generated from the package.json file by pesy. If you modify it by hand
 ; !!!! your changes will be undone! Instead, edit the package.json and then rerun 'esy pesy' at the project root.
-; !!!! If you want to stop using pesy and manage this file by hand, change pacakge.json's 'esy.build' command to: refmterr dune build -p  pesy-doctransfer
+; !!!! If you want to stop using pesy and manage this file by hand, change pacakge.json's 'esy.build' command to: refmterr dune build -p  hypatia
 (executable
    ; The entrypoint module
    (name Main)  ;  From package.json main field
-   ; The name of the executable (runnable via esy x doctransfer.exe) 
-   (public_name doctransfer.exe)  ;  From package.json name field
+   ; The name of the executable (runnable via esy x hypatia.exe) 
+   (public_name hypatia.exe)  ;  From package.json name field
    (libraries  yojson core ppx_deriving_yojson.runtime ) ;  From package.json require field (array of strings)
    (preprocess ( pps ppx_deriving_yojson ))  ; From package.json preprocess field
 )

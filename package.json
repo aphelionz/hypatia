@@ -1,24 +1,24 @@
 {
-  "name": "pesy-doctransfer",
+  "name": "hypatia",
   "version": "0.1.0",
   "description":
     "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
   "esy": {
     "build": "pesy",
-    "release": { "releasedBinaries": [ "doctransfer.exe" ] }
+    "release": { "releasedBinaries": [ "hypatia" ] }
   },
   "buildDirs": {
     "src": {
       "preprocess": [ "pps", "ppx_deriving_yojson" ],
       "require": [ "yojson", "core", "ppx_deriving_yojson.runtime" ],
       "main": "Main",
-      "name": "doctransfer.exe"
+      "name": "hypatia.exe"
     }
   },
   "scripts": {
     "lint": "bash -c 'refmt --in-place src/*.re'",
     "example":
-      "esy x doctransfer.exe ./examples/jsondoc-ast.json ./examples/output.ipynb"
+      "esy x hypatia ./examples/jsondoc-ast.json ./examples/output.ipynb"
   },
   "dependencies": {
     "@esy-ocaml/reason": "*",
