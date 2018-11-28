@@ -6,9 +6,10 @@
 
 Having interactive documentation in the form of Jupyter notebooks is awesome.
 So is having accurate and up to date code-level documentation in the form of comments.
-Wouldn't it be cool if you had a tool that transliterated js docstrings
+Wouldn't it be cool if you had a tool that transliterated the latter into the former,
+giving you fully interactive Jupyter notebook versions of your docstring comments?
 
-Hypatia turns this:
+In other words, Hypatia turns this:
 
 ```
 /**
