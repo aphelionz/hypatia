@@ -111,4 +111,4 @@ Then, if you would like, use `esy release` to build the npm package.
 
 ## License
 
-GNU General Public License v3.0 or later
+[MIT](LICENSE) © 2018 Mark Henderson
