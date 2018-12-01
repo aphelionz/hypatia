@@ -1,13 +1,16 @@
 {
   "name": "hypatia",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
   "keywords": [
     "jsdoc",
     "jupyter-notebooks",
     "jupyter",
     "ijavascript",
-    "reasonml"
+    "reasonml",
+    "jupyter-notebook",
+    "hypatia",
+    "ijavascript-jupyter-notebooks"
   ],
   "esy": {
     "build": "pesy",
