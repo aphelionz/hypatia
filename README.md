@@ -84,12 +84,22 @@ npm install -g hypatia
 Then, the binary will be available at `hypatia.exe`. Move it where you want!
 
 ## Usage
+First, create the jsdoc AST file.
+```
+jsdoc -X ./path/to/js/**/**.js > jsdoc-ast.json
+```
+
+Then, use `hypatia.exe` to generate the ipynb
 
 ```
+$ hypatia.exe
+
 Hypatia - jsdoc to ijavascript
 Usage: hypatia.exe [input_file] [output_file]
  - input_file: jsondoc output .json file
  - output_file: jupyter notebook .ipynb file
+
+$ hypatia.exe jsdoc-ast.json API.ipynb
 ```
 
 ## Contributing
