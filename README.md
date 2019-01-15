@@ -1,6 +1,6 @@
 # hypatia 
 
-> Converting JavaScript doctrings to ijavascript Jupyter Notebooks
+> Converting JavaScript doctrings (in jsdoc AST format) to ijavascript Jupyter Notebooks
 
 ## Background
 
