@@ -1,74 +1,61 @@
 open Core;
+open Console;
 
 open Yojson.Safe;
 open Yojson.Safe.Util;
 
+open AST;
 open Notebook;
 
-let snag = (target, parserFn, default, d) => {
-  let json = d |> member(target);
+let desc = ast =>  "\n" ++ ast.description ++ "\n\n";
 
-  switch (json) {
-  | `Null => default
-  | _ => json |> parserFn
-  };
-};
+let title = ast =>
+  "# "
+  ++ ast.longname
+  ++ "
+<small>"
+  ++ ast.scope
+  ++ " "
+  ++ ast.kind
+  ++ "</small>";
 
-let comment = d => d |> snag("comment", to_string, "");
-
-let title = d => {
-  let longname = snag("longname", to_string, "", d);
-  let scope = snag("scope", to_string, "", d);
-  let kind = snag("kind", to_string, "", d);
-
-  "# " ++ longname ++ " <small>" ++ scope ++ " " ++ kind ++ "</small>";
-};
-
-let desc = d => "\n" ++ snag("description", to_string, "", d);
-
-let params = d => {
-  let paramsList = snag("params", to_list, [], d);
-
+let params = ast =>
+  ["| Param | Type | Description | \n", "|-----|-----|----|"] @
   List.map(
     ~f=
-      d => {
-        let name = snag("name", to_string, "", d);
-        let namesList = d |> member("type") |> snag("names", to_list, []);
-        let description = snag("description", to_string, "", d);
-        let names =
-          namesList
-          |> List.map(~f=to_string)
-          |> List.fold_left(~f=(a, b) => a ++ " " ++ b, ~init="");
-
-        "\n* **" ++ name ++ "** " ++ names ++ " " ++ description;
+      param => {
+        let nameList =
+          switch (param.paramType) {
+          | None => ""
+          | Some(paramType) =>
+            paramType.names
+            |> List.fold_left(~f=(a, b) => a ++ " " ++ b, ~init="")
+          };
+        "\n| **" ++ param.name ++ "** | " ++ nameList ++ "|" ++ param.description ++ "|";
       },
-    paramsList,
+    ast.params,
   );
-};
-let examples = d => d |> snag("examples", to_list, []) |> filter_string;
 
-let returns = d => {
-  let returnsList = snag("returns", to_list, [], d);
-
+let returns = ast =>
   List.map(
     ~f=
-      d => {
-        let namesList = d |> member("type") |> snag("names", to_list, []);
-        let description = snag("description", to_string, "", d);
-        let names =
-          namesList
-          |> List.map(~f=to_string)
-          |> List.fold_left(~f=(a, b) => a ++ " " ++ b, ~init="");
-
-        "\n\n**Returns: " ++ names ++ "** - " ++ description;
+      return => {
+        let nameList =
+          switch (return.paramType) {
+          | None => ""
+          | Some(paramType) =>
+            paramType.names
+            |> List.fold_left(~f=(a, b) => a ++ " " ++ b, ~init="")
+          };
+        "\n\n**Returns: " ++ nameList ++ "** - " ++ ast.description;
       },
-    returnsList,
+    ast.returns,
   );
-};
 
-let createCells = d => [
-  MarkdownCell([title(d), desc(d)] @ params(d) @ returns(d)),
-  CodeCell(examples(d), [], 0),
+
+let createCells = ast => [
+  MarkdownCell([title(ast), desc(ast)] @ params(ast) @ returns(ast)),
+  CodeCell(ast.examples, [], 0),
 ];
 
 let expandCells = cell =>
@@ -95,7 +82,17 @@ let process = (input_file, output_file) => {
   let cells =
     jsdoc
     |> to_list
-    |> List.filter(~f=d => String.length(comment(d)) != 0)
+    |> List.map(~f=astItem_of_yojson)
+    |> List.map(~f=ast =>
+         switch (ast) {
+         | Error(result) =>
+           Console.log(result);
+           [];
+         | Ok(ast) => [ast]
+         }
+       )
+    |> ListLabels.flatten
+    |> List.filter(~f=ast => !ast.undocumented)
     |> List.map(~f=createCells)
     |> ListLabels.flatten
     |> List.map(~f=expandCells);
