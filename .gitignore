@@ -9,3 +9,4 @@ pesy-doctransfer.install
 *.install
 _esy
 node_modules
+esy.lock
