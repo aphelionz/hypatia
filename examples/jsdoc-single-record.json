@@ -1,0 +1,26 @@
+[
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                14,
+                106
+            ],
+            "filename": "default-access-controller.js",
+            "lineno": 3,
+            "columnno": 0,
+            "path": "/home/mark/Projects/orbitdb/ipfs-log/src",
+            "code": {
+                "id": "astnode100000004",
+                "name": "AccessController",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "AccessController",
+        "longname": "AccessController",
+        "kind": "class",
+        "scope": "global"
+    }
+]
