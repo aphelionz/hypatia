@@ -1,33 +1,23 @@
 {
   "name": "hypatia",
   "version": "0.1.6",
-  "description": "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
+  "description":
+    "Converting JavaScript doctrings to ijavascript Jupyter Notebooks",
   "keywords": [
-    "jsdoc",
-    "jupyter-notebooks",
-    "jupyter",
-    "ijavascript",
-    "reasonml",
-    "jupyter-notebook",
-    "hypatia",
-    "ijavascript-jupyter-notebooks"
+    "jsdoc", "jupyter-notebooks", "jupyter", "ijavascript", "reasonml",
+    "jupyter-notebook", "hypatia", "ijavascript-jupyter-notebooks"
   ],
   "esy": {
     "build": "pesy",
     "release": {
-      "releasedBinaries": [ "hypatia.exe"],
-      "deleteFromBinaryRelease": [
-        "opam*",
-        "*ocaml*",
-        "refmterr*",
-        "pesy"
-      ]
+      "releasedBinaries": [ "hypatia.exe" ],
+      "deleteFromBinaryRelease": [ "opam*", "*ocaml*", "refmterr*", "pesy" ]
     }
   },
   "buildDirs": {
     "src": {
       "preprocess": [ "pps", "ppx_deriving_yojson" ],
-      "require": [ "yojson", "core", "ppx_deriving_yojson.runtime" ],
+      "require": [ "yojson", "core", "ppx_deriving_yojson.runtime", "console.lib" ],
       "main": "Main",
       "name": "hypatia.exe"
     }
@@ -43,7 +33,8 @@
     "@opam/dune": "*",
     "@opam/ppx_deriving_yojson": "3.1",
     "@opam/yojson": "1.4.1",
-    "ocaml": "^4.4.0",
+    "@reason-native/console": "^0.0.2",
+    "ocaml": "4.7.0",
     "pesy": "jordwalke/pesy.git",
     "refmterr": "*"
   },
