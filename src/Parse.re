@@ -10,17 +10,10 @@ open Notebook;
 let desc = ast =>  "\n" ++ ast.description ++ "\n\n";
 
 let title = ast =>
-  "# "
-  ++ ast.longname
-  ++ "
-<small>"
-  ++ ast.scope
-  ++ " "
-  ++ ast.kind
-  ++ "</small>";
+  "# " ++ ast.longname ++ " <small>" ++ ast.scope ++ " " ++ ast.kind ++ "</small>";
 
 let params = ast =>
-  ["| Param | Type | Description | \n", "|-----|-----|----|"] @
+  ["## Parameters\n", "| Param | Type | Description | \n", "|-----|-----|----|"] @
   List.map(
     ~f=
       param => {
